@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-class DataStore {
+struct DataStore {
     
     var messages:[Message] = []
     
@@ -18,7 +18,7 @@ class DataStore {
     
     // MARK: - Core Data Saving support
     
-    func saveContext () {
+    mutating func saveContext () {
         if managedObjectContext.hasChanges {
             do {
                 try managedObjectContext.save()
@@ -32,7 +32,7 @@ class DataStore {
         }
     }
     
-    func fetchData ()
+    mutating func fetchData ()
     {
         
         var error:NSError? = nil
@@ -57,7 +57,7 @@ class DataStore {
         ////         perform a fetch request to fill an array property on your datastore
     }
     
-    func generateTestData() {
+    mutating func generateTestData() {
         
         let messageOne: Message = NSEntityDescription.insertNewObjectForEntityForName("Message", inManagedObjectContext: managedObjectContext) as! Message
         
