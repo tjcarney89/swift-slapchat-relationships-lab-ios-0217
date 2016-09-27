@@ -1,5 +1,3 @@
-
-
 Core Data SlapChat Relationships
 =========
 
@@ -13,17 +11,18 @@ Core Data SlapChat Relationships
     - email
     - phoneNumber 
     - twitterHandle 
-  3. In your data model, 'Recipient' should have a to many relationship with 'Messages' and Message should have a to-one relationship with Recipient.  In other words, a recipient can have many messages but a message can only have one recipient. 
-  4. Add a new `UITableViewController` that is made to list Recipients. So the standard fetchrequest stuff. Very similar to how you did the messagesTableViewController
+  3. In your data model, 'Recipient' should have a to-many relationship with 'Messages' and Message should have a to-one relationship with Recipient.  In other words, a recipient can have many messages but a message can only have one recipient. 
+  4. Add a new `UITableViewController` that lists Recipients. So the standard fetchrequest stuff. Very similar to how you did the messagesTableViewController
   5. When a user selects a recipient. It should segue to the messages table view controller and just show the messages for the selected recipient.
 
 # Extra Credit 
 
-  * Add in another Search view controller that will search recipients/messages. Search by different fields
+Add in another Search view controller that will search recipients/messages. Search by different fields.
 
-# Hints
+___
 
-Give our view controller in the storyboard an identifier. Do this the same way you give identifiers to segues. Then call `instantiateViewControllerWithIdentifier(_:)`. That should help you out.
+### Tip
 
+Give the view controller in the storyboard an identifier. Do this the same way you give identifiers to segues. Then call `instantiateViewControllerWithIdentifier(_:)`.
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/objc-SlapChat-Relationships' title='Core Data SlapChat Relationships'>Core Data SlapChat Relationships</a> on Learn.co and start learning to code for free.</p>
