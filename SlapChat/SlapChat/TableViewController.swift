@@ -12,7 +12,7 @@ class TableViewController: UITableViewController {
     
     var messages: Set<Message> = []
     var managedMessageObjects: [Message] = []
-    let store: DataStore = DataStore()
+    var store: DataStore = DataStore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,7 @@ class TableViewController: UITableViewController {
         
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(true)
         
@@ -45,21 +45,21 @@ class TableViewController: UITableViewController {
     
     // MARK: - Table view data source
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return messages.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("basicCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "basicCell", for: indexPath)
         
         let messagesArray = Array(messages)
-        let eachMessage = messagesArray[indexPath.row]
+        let eachMessage = messagesArray[(indexPath as NSIndexPath).row]
         cell.textLabel?.text = eachMessage.content
         
         return cell

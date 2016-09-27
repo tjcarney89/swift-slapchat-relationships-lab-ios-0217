@@ -35,9 +35,7 @@ struct DataStore {
     
     mutating func fetchData ()
     {
-//        var error:NSError? = nil
-        
-        let recipientRequest = NSFetchRequest(entityName: "Recipient")
+        let recipientRequest = NSFetchRequest<Recipient>(entityName: "Recipient")
         
         let createdAtSorter = NSSortDescriptor(key: "name", ascending:true)
         
@@ -45,7 +43,7 @@ struct DataStore {
         
         do{
             
-            recipients = try managedObjectContext.executeFetchRequest(recipientRequest) as! [Recipient]
+            recipients = try managedObjectContext.fetch(recipientRequest)
             
         }catch let error as NSError{
             
@@ -65,41 +63,41 @@ struct DataStore {
         print("being called")
         
         
-        let recipient1: Recipient = NSEntityDescription.insertNewObjectForEntityForName("Recipient", inManagedObjectContext: managedObjectContext) as! Recipient
+        let recipient1: Recipient = NSEntityDescription.insertNewObject(forEntityName: "Recipient", into: managedObjectContext) as! Recipient
         recipient1.name = "Recipient 1"
         
-        let recipient2: Recipient = NSEntityDescription.insertNewObjectForEntityForName("Recipient", inManagedObjectContext: managedObjectContext) as! Recipient
+        let recipient2: Recipient = NSEntityDescription.insertNewObject(forEntityName: "Recipient", into: managedObjectContext) as! Recipient
         recipient2.name = "Recipient 2"
         
-        let recipient3: Recipient = NSEntityDescription.insertNewObjectForEntityForName("Recipient", inManagedObjectContext: managedObjectContext) as! Recipient
+        let recipient3: Recipient = NSEntityDescription.insertNewObject(forEntityName: "Recipient", into: managedObjectContext) as! Recipient
         recipient3.name = "Recipient 3"
         
-        let messageOne: Message = NSEntityDescription.insertNewObjectForEntityForName("Message", inManagedObjectContext: managedObjectContext) as! Message
+        let messageOne: Message = NSEntityDescription.insertNewObject(forEntityName: "Message", into: managedObjectContext) as! Message
         
         messageOne.content = "Message 1"
-        messageOne.createdAt = NSDate()
+        messageOne.createdAt = Date()
         
-        let messageTwo: Message = NSEntityDescription.insertNewObjectForEntityForName("Message", inManagedObjectContext: managedObjectContext) as! Message
+        let messageTwo: Message = NSEntityDescription.insertNewObject(forEntityName: "Message", into: managedObjectContext) as! Message
         
         messageTwo.content = "Message 2"
-        messageTwo.createdAt = NSDate()
+        messageTwo.createdAt = Date()
         
-        let messageThree: Message = NSEntityDescription.insertNewObjectForEntityForName("Message", inManagedObjectContext: managedObjectContext) as! Message
+        let messageThree: Message = NSEntityDescription.insertNewObject(forEntityName: "Message", into: managedObjectContext) as! Message
         
         messageThree.content = "Message 3"
-        messageThree.createdAt = NSDate()
+        messageThree.createdAt = Date()
         
         
-        let messageFour: Message = NSEntityDescription.insertNewObjectForEntityForName("Message", inManagedObjectContext: managedObjectContext) as! Message
+        let messageFour: Message = NSEntityDescription.insertNewObject(forEntityName: "Message", into: managedObjectContext) as! Message
         
         messageFour.content = "Message 4"
-        messageFour.createdAt = NSDate()
+        messageFour.createdAt = Date()
         
         
-        let messageFive: Message = NSEntityDescription.insertNewObjectForEntityForName("Message", inManagedObjectContext: managedObjectContext) as! Message
+        let messageFive: Message = NSEntityDescription.insertNewObject(forEntityName: "Message", into: managedObjectContext) as! Message
         
         messageFive.content = "Message 5"
-        messageFive.createdAt = NSDate()
+        messageFive.createdAt = Date()
         
         recipient1.messages?.insert(messageOne)
         recipient1.messages?.insert(messageTwo)
@@ -119,30 +117,30 @@ struct DataStore {
     lazy var managedObjectContext: NSManagedObjectContext = {
         // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.) This property is optional since there are legitimate error conditions that could cause the creation of the context to fail.
         let coordinator = self.persistentStoreCoordinator
-        var managedObjectContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
+        var managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
         managedObjectContext.persistentStoreCoordinator = coordinator
         return managedObjectContext
     }()
     
     lazy var managedObjectModel: NSManagedObjectModel = {
         // The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
-        let modelURL = NSBundle.mainBundle().URLForResource("SlapChat", withExtension: "momd")!
-        return NSManagedObjectModel(contentsOfURL: modelURL)!
+        let modelURL = Bundle.main.url(forResource: "SlapChat", withExtension: "momd")!
+        return NSManagedObjectModel(contentsOf: modelURL)!
     }()
     
     lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
         // The persistent store coordinator for the application. This implementation creates and returns a coordinator, having added the store for the application to it. This property is optional since there are legitimate error conditions that could cause the creation of the store to fail.
         // Create the coordinator and store
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-        let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("SingleViewCoreData.sqlite")
+        let url = self.applicationDocumentsDirectory.appendingPathComponent("SingleViewCoreData.sqlite")
         var failureReason = "There was an error creating or loading the application's saved data."
         do {
-            try coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil)
+            try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: url, options: nil)
         } catch {
             // Report any error we got.
             var dict = [String: AnyObject]()
-            dict[NSLocalizedDescriptionKey] = "Failed to initialize the application's saved data"
-            dict[NSLocalizedFailureReasonErrorKey] = failureReason
+            dict[NSLocalizedDescriptionKey] = "Failed to initialize the application's saved data" as AnyObject?
+            dict[NSLocalizedFailureReasonErrorKey] = failureReason as AnyObject?
             
             dict[NSUnderlyingErrorKey] = error as NSError
             let wrappedError = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
@@ -158,9 +156,9 @@ struct DataStore {
     //MARK: Application's Documents directory
     // Returns the URL to the application's Documents directory.
     
-    lazy var applicationDocumentsDirectory: NSURL = {
+    lazy var applicationDocumentsDirectory: URL = {
         // The directory the application uses to store the Core Data store file. This code uses a directory named "com.FlatironSchool.SlapChat" in the application's documents Application Support directory.
-        let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
+        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return urls[urls.count-1]
     }()
 }
