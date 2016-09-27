@@ -15,6 +15,6 @@ import CoreData
 extension Message {
 
     @NSManaged var content: String?
-    @NSManaged var createdAt: NSDate?
+    @NSManaged var createdAt: Date?
 
 }
