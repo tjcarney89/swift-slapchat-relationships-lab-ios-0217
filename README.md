@@ -20,8 +20,3 @@ Add in another Search view controller that will search recipients/messages. Sear
 
 ___
 
-### Tip
-
-Give the view controller in the storyboard an identifier. Do this the same way you give identifiers to segues. Then call `instantiateViewControllerWithIdentifier(_:)`.
-
-<p data-visibility='hidden'>View <a href='https://learn.co/lessons/objc-SlapChat-Relationships' title='Core Data SlapChat Relationships'>Core Data SlapChat Relationships</a> on Learn.co and start learning to code for free.</p>
