@@ -12,29 +12,10 @@
 		1B5504411DD1004A0043E319 /* SlapChat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1B55043F1DD1004A0043E319 /* SlapChat.xcdatamodeld */; };
 		1B5504431DD1004A0043E319 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B5504421DD1004A0043E319 /* Assets.xcassets */; };
 		1B5504461DD1004A0043E319 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B5504441DD1004A0043E319 /* LaunchScreen.storyboard */; };
-		1B5504511DD1004B0043E319 /* SlapChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5504501DD1004B0043E319 /* SlapChatTests.swift */; };
-		1B55045C1DD1004B0043E319 /* SlapChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B55045B1DD1004B0043E319 /* SlapChatUITests.swift */; };
 		1B5504701DD102400043E319 /* AddMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B55046D1DD102400043E319 /* AddMessageViewController.swift */; };
 		1B5504711DD102400043E319 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B55046E1DD102400043E319 /* DataStore.swift */; };
 		1B5504721DD102400043E319 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B55046F1DD102400043E319 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		1B55044D1DD1004B0043E319 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1B55042D1DD1004A0043E319 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1B5504341DD1004A0043E319;
-			remoteInfo = SlapChat;
-		};
-		1B5504581DD1004B0043E319 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1B55042D1DD1004A0043E319 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1B5504341DD1004A0043E319;
-			remoteInfo = SlapChat;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1B5504351DD1004A0043E319 /* SlapChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlapChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,12 +25,6 @@
 		1B5504421DD1004A0043E319 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B5504451DD1004A0043E319 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B5504471DD1004A0043E319 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1B55044C1DD1004B0043E319 /* SlapChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlapChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1B5504501DD1004B0043E319 /* SlapChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlapChatTests.swift; sourceTree = "<group>"; };
-		1B5504521DD1004B0043E319 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1B5504571DD1004B0043E319 /* SlapChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlapChatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1B55045B1DD1004B0043E319 /* SlapChatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlapChatUITests.swift; sourceTree = "<group>"; };
-		1B55045D1DD1004B0043E319 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B55046D1DD102400043E319 /* AddMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMessageViewController.swift; sourceTree = "<group>"; };
 		1B55046E1DD102400043E319 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		1B55046F1DD102400043E319 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
@@ -63,20 +38,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1B5504491DD1004B0043E319 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1B5504541DD1004B0043E319 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -84,8 +45,6 @@
 			isa = PBXGroup;
 			children = (
 				1B5504371DD1004A0043E319 /* SlapChat */,
-				1B55044F1DD1004B0043E319 /* SlapChatTests */,
-				1B55045A1DD1004B0043E319 /* SlapChatUITests */,
 				1B5504361DD1004A0043E319 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,8 +53,6 @@
 			isa = PBXGroup;
 			children = (
 				1B5504351DD1004A0043E319 /* SlapChat.app */,
-				1B55044C1DD1004B0043E319 /* SlapChatTests.xctest */,
-				1B5504571DD1004B0043E319 /* SlapChatUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -114,24 +71,6 @@
 				1B55043F1DD1004A0043E319 /* SlapChat.xcdatamodeld */,
 			);
 			path = SlapChat;
-			sourceTree = "<group>";
-		};
-		1B55044F1DD1004B0043E319 /* SlapChatTests */ = {
-			isa = PBXGroup;
-			children = (
-				1B5504501DD1004B0043E319 /* SlapChatTests.swift */,
-				1B5504521DD1004B0043E319 /* Info.plist */,
-			);
-			path = SlapChatTests;
-			sourceTree = "<group>";
-		};
-		1B55045A1DD1004B0043E319 /* SlapChatUITests */ = {
-			isa = PBXGroup;
-			children = (
-				1B55045B1DD1004B0043E319 /* SlapChatUITests.swift */,
-				1B55045D1DD1004B0043E319 /* Info.plist */,
-			);
-			path = SlapChatUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,42 +93,6 @@
 			productReference = 1B5504351DD1004A0043E319 /* SlapChat.app */;
 			productType = "com.apple.product-type.application";
 		};
-		1B55044B1DD1004B0043E319 /* SlapChatTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1B5504631DD1004B0043E319 /* Build configuration list for PBXNativeTarget "SlapChatTests" */;
-			buildPhases = (
-				1B5504481DD1004B0043E319 /* Sources */,
-				1B5504491DD1004B0043E319 /* Frameworks */,
-				1B55044A1DD1004B0043E319 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1B55044E1DD1004B0043E319 /* PBXTargetDependency */,
-			);
-			name = SlapChatTests;
-			productName = SlapChatTests;
-			productReference = 1B55044C1DD1004B0043E319 /* SlapChatTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		1B5504561DD1004B0043E319 /* SlapChatUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1B5504661DD1004B0043E319 /* Build configuration list for PBXNativeTarget "SlapChatUITests" */;
-			buildPhases = (
-				1B5504531DD1004B0043E319 /* Sources */,
-				1B5504541DD1004B0043E319 /* Frameworks */,
-				1B5504551DD1004B0043E319 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1B5504591DD1004B0043E319 /* PBXTargetDependency */,
-			);
-			name = SlapChatUITests;
-			productName = SlapChatUITests;
-			productReference = 1B5504571DD1004B0043E319 /* SlapChatUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -202,17 +105,8 @@
 				TargetAttributes = {
 					1B5504341DD1004A0043E319 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = KXY9EDFTF5;
 						ProvisioningStyle = Automatic;
-					};
-					1B55044B1DD1004B0043E319 = {
-						CreatedOnToolsVersion = 8.1;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 1B5504341DD1004A0043E319;
-					};
-					1B5504561DD1004B0043E319 = {
-						CreatedOnToolsVersion = 8.1;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 1B5504341DD1004A0043E319;
 					};
 				};
 			};
@@ -230,8 +124,6 @@
 			projectRoot = "";
 			targets = (
 				1B5504341DD1004A0043E319 /* SlapChat */,
-				1B55044B1DD1004B0043E319 /* SlapChatTests */,
-				1B5504561DD1004B0043E319 /* SlapChatUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -244,20 +136,6 @@
 				1B5504461DD1004A0043E319 /* LaunchScreen.storyboard in Resources */,
 				1B5504431DD1004A0043E319 /* Assets.xcassets in Resources */,
 				1B55043E1DD1004A0043E319 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1B55044A1DD1004B0043E319 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1B5504551DD1004B0043E319 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,36 +154,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1B5504481DD1004B0043E319 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1B5504511DD1004B0043E319 /* SlapChatTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1B5504531DD1004B0043E319 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1B55045C1DD1004B0043E319 /* SlapChatUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		1B55044E1DD1004B0043E319 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1B5504341DD1004A0043E319 /* SlapChat */;
-			targetProxy = 1B55044D1DD1004B0043E319 /* PBXContainerItemProxy */;
-		};
-		1B5504591DD1004B0043E319 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1B5504341DD1004A0043E319 /* SlapChat */;
-			targetProxy = 1B5504581DD1004B0043E319 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1B55043C1DD1004A0043E319 /* Main.storyboard */ = {
@@ -424,6 +273,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = KXY9EDFTF5;
 				INFOPLIST_FILE = SlapChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.FlatironSchool.SlapChat;
@@ -436,65 +286,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = KXY9EDFTF5;
 				INFOPLIST_FILE = SlapChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.FlatironSchool.SlapChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
-		1B5504641DD1004B0043E319 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = SlapChatTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.FlatironSchool.SlapChatTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SlapChat.app/SlapChat";
-			};
-			name = Debug;
-		};
-		1B5504651DD1004B0043E319 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = SlapChatTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.FlatironSchool.SlapChatTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SlapChat.app/SlapChat";
-			};
-			name = Release;
-		};
-		1B5504671DD1004B0043E319 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = SlapChatUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.FlatironSchool.SlapChatUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = SlapChat;
-			};
-			name = Debug;
-		};
-		1B5504681DD1004B0043E319 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = SlapChatUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.FlatironSchool.SlapChatUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = SlapChat;
 			};
 			name = Release;
 		};
@@ -517,22 +314,7 @@
 				1B5504621DD1004B0043E319 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		1B5504631DD1004B0043E319 /* Build configuration list for PBXNativeTarget "SlapChatTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1B5504641DD1004B0043E319 /* Debug */,
-				1B5504651DD1004B0043E319 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		1B5504661DD1004B0043E319 /* Build configuration list for PBXNativeTarget "SlapChatUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1B5504671DD1004B0043E319 /* Debug */,
-				1B5504681DD1004B0043E319 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
