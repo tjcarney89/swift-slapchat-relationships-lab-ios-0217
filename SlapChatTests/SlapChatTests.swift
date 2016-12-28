@@ -24,11 +24,22 @@ class SlapChatTests: XCTestCase {
         deleteAll(entity: "Message")
         store = nil
     }
+    func testAddingRecipient() {
+        let context = store.persistentContainer.viewContext
+        let msg1 = Message(context: context)
+        let recipient = Recipient(context: context)
+        recipient.name = "Johann"
+        recipient.email = "johann@flatironschool.com"
+        recipient.phoneNumber = "6318357570"
+        recipient.twitterHandle = "@johannkerr"
+        recipient.addToMessages(msg1)
+        XCTAssertEqual(recipient.messages?.count, 1)
+    }
     
     func testFetchData() {
         deleteAll(entity: "Message")
         store.fetchData()
-        XCTAssertEqual(store.messages.count, 0)
+        XCTAssertEqual(store.messages.count, 3)
         
         let msg1 = Message(context: store.persistentContainer.viewContext)
         msg1.content = "Testing Message"
@@ -36,7 +47,7 @@ class SlapChatTests: XCTestCase {
         store.saveContext()
         
         store.fetchData()
-        XCTAssertEqual(store.messages.count, 1)
+        XCTAssertEqual(store.messages.count, 4)
         
         
     }
@@ -54,11 +65,12 @@ class SlapChatTests: XCTestCase {
         
         do {
             let items = try context.fetch(fetchRequest)
-            
             for item in items {
                 let managedObj = item as! NSManagedObject
                 context.delete(managedObj)
+                
             }
+            store.saveContext()
         } catch {
             
         }
