@@ -1,14 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="giX-UC-q7J">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3EV-0v-57x">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Add Recipient View Controller-->
+        <scene sceneID="sOT-WB-pQ4">
+            <objects>
+                <viewController id="fRy-4x-Bes" customClass="AddRecipientViewController" customModule="SlapChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qco-lo-hzU"/>
+                        <viewControllerLayoutGuide type="bottom" id="uSf-IU-0us"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PyS-Nj-oKn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Recipient Twitter Handle" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sgh-yc-eY4">
+                                <rect key="frame" x="37.5" y="245" width="300" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewF-mw-tEL">
+                                <rect key="frame" x="170" y="295" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="fRy-4x-Bes" eventType="touchUpInside" id="heT-fo-zM8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V2B-wg-taT">
+                                <rect key="frame" x="163" y="335" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButtonTapped:" destination="fRy-4x-Bes" eventType="touchUpInside" id="qex-Aq-p2o"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Recipient Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z9I-N2-9no">
+                                <rect key="frame" x="37.5" y="200" width="300" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Recipient Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BMp-o8-JFB">
+                                <rect key="frame" x="37.5" y="155" width="300" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Recipient Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wq9-WQ-A7X">
+                                <rect key="frame" x="37.5" y="110" width="300" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ewF-mw-tEL" firstAttribute="centerX" secondItem="PyS-Nj-oKn" secondAttribute="centerX" id="0kv-xU-0y4"/>
+                            <constraint firstItem="sgh-yc-eY4" firstAttribute="width" secondItem="PyS-Nj-oKn" secondAttribute="width" multiplier="0.8" id="3h3-1O-a5A"/>
+                            <constraint firstItem="Wq9-WQ-A7X" firstAttribute="top" secondItem="qco-lo-hzU" secondAttribute="bottom" constant="90" id="5a0-k3-Oek"/>
+                            <constraint firstItem="Wq9-WQ-A7X" firstAttribute="width" secondItem="PyS-Nj-oKn" secondAttribute="width" multiplier="0.8" id="80G-ti-wm7"/>
+                            <constraint firstItem="z9I-N2-9no" firstAttribute="top" secondItem="BMp-o8-JFB" secondAttribute="bottom" constant="15" id="FHa-2e-FYG"/>
+                            <constraint firstItem="BMp-o8-JFB" firstAttribute="centerX" secondItem="PyS-Nj-oKn" secondAttribute="centerX" id="My5-tm-NTn"/>
+                            <constraint firstItem="z9I-N2-9no" firstAttribute="centerX" secondItem="PyS-Nj-oKn" secondAttribute="centerX" id="TRW-c4-IQy"/>
+                            <constraint firstItem="Wq9-WQ-A7X" firstAttribute="centerX" secondItem="PyS-Nj-oKn" secondAttribute="centerX" id="XTj-9U-Kn0"/>
+                            <constraint firstItem="sgh-yc-eY4" firstAttribute="top" secondItem="z9I-N2-9no" secondAttribute="bottom" constant="15" id="ZXe-gY-jB0"/>
+                            <constraint firstItem="BMp-o8-JFB" firstAttribute="width" secondItem="PyS-Nj-oKn" secondAttribute="width" multiplier="0.8" id="bpL-VV-Vrf"/>
+                            <constraint firstItem="V2B-wg-taT" firstAttribute="centerX" secondItem="PyS-Nj-oKn" secondAttribute="centerX" id="ekZ-bR-pZq"/>
+                            <constraint firstItem="V2B-wg-taT" firstAttribute="top" secondItem="ewF-mw-tEL" secondAttribute="bottom" constant="10" id="nD4-tT-uAx"/>
+                            <constraint firstItem="z9I-N2-9no" firstAttribute="width" secondItem="PyS-Nj-oKn" secondAttribute="width" multiplier="0.8" id="qX4-qg-bdv"/>
+                            <constraint firstItem="ewF-mw-tEL" firstAttribute="top" secondItem="sgh-yc-eY4" secondAttribute="bottom" constant="20" id="udb-bA-shC"/>
+                            <constraint firstItem="sgh-yc-eY4" firstAttribute="centerX" secondItem="PyS-Nj-oKn" secondAttribute="centerX" id="v9r-mO-vCS"/>
+                            <constraint firstItem="BMp-o8-JFB" firstAttribute="top" secondItem="Wq9-WQ-A7X" secondAttribute="bottom" constant="15" id="vte-mk-Hbx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="recipientEmailTextField" destination="BMp-o8-JFB" id="L9z-dX-B8k"/>
+                        <outlet property="recipientNameTextField" destination="Wq9-WQ-A7X" id="UCp-XS-9ZP"/>
+                        <outlet property="recipientPhoneTextField" destination="z9I-N2-9no" id="Bcn-Wu-Wdi"/>
+                        <outlet property="recipientTwitterTextField" destination="sgh-yc-eY4" id="eNO-Mz-ncj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xzu-7y-A2j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1081" y="-455"/>
+        </scene>
         <!--Add Message View Controller-->
         <scene sceneID="ieV-Ri-tn0">
             <objects>
@@ -65,7 +148,45 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RKf-Tl-shh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="956" y="-439"/>
+            <point key="canvasLocation" x="1895" y="-445"/>
+        </scene>
+        <!--Recipient Table View Controller-->
+        <scene sceneID="4Ux-pa-yj6">
+            <objects>
+                <tableViewController id="KHw-F0-ptH" customClass="RecipientTableViewController" customModule="SlapChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ezJ-aL-Gbh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="recipientCell" id="hyq-NO-Bmh">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hyq-NO-Bmh" id="Rvx-CD-KbR">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="XAu-n2-nEF" kind="show" identifier="messageSegue" id="fxM-0r-5Xf"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="KHw-F0-ptH" id="kbW-rP-pHe"/>
+                            <outlet property="delegate" destination="KHw-F0-ptH" id="Wtc-vC-Gc5"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Y93-6m-jPB">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="tQy-t1-fgG">
+                            <connections>
+                                <segue destination="fRy-4x-Bes" kind="presentation" id="bQd-Sa-UnY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aIm-Lc-K3S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="337.78110944527737"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="z6K-tG-zJe">
@@ -102,32 +223,32 @@
                     <navigationItem key="navigationItem" id="hPh-B6-6eu">
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="SYd-iy-GQY">
                             <connections>
-                                <segue destination="o7X-q2-Eqs" kind="presentation" id="Lbo-YO-tXG"/>
+                                <segue destination="o7X-q2-Eqs" kind="presentation" identifier="addmessageSegue" id="Lbo-YO-tXG"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ejz-2p-aJF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="957" y="339"/>
+            <point key="canvasLocation" x="1895.2" y="338.68065967016497"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="GI5-Nd-ee2">
+        <scene sceneID="Trk-92-iFH">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="giX-UC-q7J" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3EV-0v-57x" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="j3J-tc-WST">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hyD-LG-Bgf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="XAu-n2-nEF" kind="relationship" relationship="rootViewController" id="5jL-VR-B9o"/>
+                        <segue destination="KHw-F0-ptH" kind="relationship" relationship="rootViewController" id="PFF-eu-2LL"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cKw-uV-NVK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="58C-bC-Vcc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="145" y="339"/>
+            <point key="canvasLocation" x="136.80000000000001" y="337.78110944527737"/>
         </scene>
     </scenes>
 </document>

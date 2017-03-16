@@ -12,6 +12,7 @@ import CoreData
 class DataStore {
     
     var messages:[Message] = []
+    var recipients: [Recipient] = []
     
     static let sharedInstance = DataStore()
     
@@ -52,6 +53,7 @@ class DataStore {
         let context = persistentContainer.viewContext
         if context.hasChanges {
             do {
+                print("Save is happening")
                 try context.save()
             } catch {
                 // Replace this implementation with code to handle the error appropriately.
@@ -67,6 +69,7 @@ class DataStore {
     func fetchData() {
         let context = persistentContainer.viewContext
         let messagesRequest: NSFetchRequest<Message> = Message.fetchRequest()
+        let recipientsRequest: NSFetchRequest<Recipient> = Recipient.fetchRequest()
         
         do {
             messages = try context.fetch(messagesRequest)
@@ -75,12 +78,16 @@ class DataStore {
                 let date2 = message2.createdAt! as Date
                 return date1 < date2
             })
+            recipients = try context.fetch(recipientsRequest)
         } catch let error {
             print("Error fetching data: \(error)")
             messages = []
         }
         
         if messages.count == 0 {
+            generateTestData()
+        }
+        if recipients.count == 0 {
             generateTestData()
         }
     }
@@ -104,6 +111,14 @@ class DataStore {
         
         messageThree.content = "Message 3"
         messageThree.createdAt = NSDate()
+        
+        let recipientOne = Recipient(context: context)
+        
+        recipientOne.name = "Recipient 1"
+        recipientOne.email = "Recipient1@gmail.com"
+        recipientOne.phoneNumber = "867-5309"
+        recipientOne.twitterHandle = "@RecipientOne"
+        recipientOne.messages = [messageOne, messageTwo, messageThree]
         
         saveContext()
         fetchData()
